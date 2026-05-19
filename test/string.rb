@@ -70,6 +70,7 @@ end
 assert('#19 - should not substitute back-reference in str block returns') do
   assert_equal "\\1bc", "abc".gsub(/(a)/) { |m| "\\1" }
   assert_equal "\\1bc", "abc".sub(/(a)/) { |m| "\\1" }
+  assert_equal "aBcB", "abcb".gsub(/b/, &:upcase)
 end
 
 assert('String#index') do
